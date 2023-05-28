@@ -28,13 +28,15 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div className="container">
+      <div className="container"style={{color:props.pagemode==='light'?'#2c2e34':'white'}}>
         <h1>{props.heading1}</h1>
         <div className="mb-1">
           {/* <label htmlFor="FormTextarea1" className="form-label">
           Enter your text here:
         </label> */}
           <textarea
+            style={{backgroundColor:props.pagemode==='light'?'white':'#2c2e34',color:props.pagemode==='light'?'#2c2e34':'white'}}
+            
             className="form-control"
             value={text}
             onChange={handleonChange}
@@ -53,14 +55,14 @@ export default function TextForm(props) {
         </button>
         <button className="btn btn-primary mx-2"onClick={handleEmail}>Extract Emails</button>
       </div>
-      <div className="container my-3">
+      <div className="container my-3"style={{color:props.pagemode==='light'?'#2c2e34':'white'}}>
         <h2>Your text summary:</h2>
         <p>
           {text.split(" ").length} words, {text.length} characters(including
           spaces).
         </p>
         <h3>Preview</h3>
-        <p>{text}</p>
+        <p>{text.length>0?text:"Enter text above to preview"}</p>
       </div>
     </>
   );
