@@ -1,12 +1,20 @@
 //import logo from './logo.svg';
 import "./App.css";
 import Navbar from "./components/Navbar";
+import TextForm from "./components/TextForm";
+//import About from "./components/About";
 
 function App() {
   return (
-      <>
-        <Navbar title="TextUtils Blog" aboutText="About Us"/>
-      </>
+    <>
+      <Navbar title="TextUtils Blog" aboutText="About Us" />
+      <div className="container my-3">
+        <TextForm heading1="Enter your text below to analyze:" heading2="Results"/>
+      </div>
+      {/* <div className="container">
+        <About/>
+      </div> */}
+    </>
   );
 }
 
