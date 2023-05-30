@@ -23,7 +23,13 @@ export default function TextForm(props) {
   };
   const handleEmail=()=>{
     let emails= text.match(/([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/gi);
-    setText(emails.join('\n'))
+    if (emails!== null){
+      setText(emails.join('\n'))
+    }
+    else{
+      setText("No emails found")
+    }
+    
   }
 
   return (
